@@ -1,0 +1,87 @@
+@media print {
+    /*.myDivToPrint {*/
+    /*    background-color: white;*/
+    /*    height: 100%;*/
+    /*    width: 100%;*/
+    /*    position: fixed;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    margin: 0;*/
+    /*    padding: 15px;*/
+    /*    font-size: 14px;*/
+    /*    line-height: 18px;*/
+    /*}*/
+
+    .myDivToPrint{
+        margin: 0;
+        color: #000;
+        background-color: #fff;
+        font-size: 14px;
+        height: 100%;
+
+    }
+    .nprint{
+        display: none;
+    }
+    header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+        display: none;
+    }
+
+}
+
+.debug{
+    border: 1px solid red;
+}
+
+.printarea{
+    width: 816px;
+    margin: 30px auto 0;
+}
+
+
+
+.report{
+    margin-top: 25px;
+    border: 1px solid black;
+}
+.report-body{
+    padding: 15px;
+}
+
+.report-header{
+    background-color: black;
+    color: white;
+    padding: 5px 0;
+}
+.report-table {
+    display: flex;
+}
+.report-table table{
+    margin: 15px auto;
+}
+
+.report-table table  tr th{
+    padding: 15px;
+}
+
+.report-table table  tr{
+    border: 1px solid black;
+}
+.report-table table  tr  td{
+    text-align: left;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.print-title{
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.print-cy{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
