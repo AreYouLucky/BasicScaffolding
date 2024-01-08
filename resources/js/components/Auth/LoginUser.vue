@@ -37,7 +37,18 @@
             submit() {
                 axios.post('/login', this.credentials)
                     .then(response => {
-                        window.location = '/login';
+                        console.log(response.data.role);
+
+                        if(response.data.role === 'ADMIN'){
+                            window.location = '/admin-dashboard';
+                        }
+                        if(response.data.role === 'SELLER'){
+                            window.location = '/seller-dashboard';
+                        }
+                        if(response.data.role === 'BUYER'){
+                            window.location = '/buyer-dashboard';
+                        }
+                        
                         
                     })
                     .catch(error => {

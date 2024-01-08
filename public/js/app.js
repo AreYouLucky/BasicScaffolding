@@ -2101,7 +2101,19 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       axios.post('/login', this.credentials).then(function (response) {
-        window.location = '/login';
+        console.log(response.data.role);
+
+        if (response.data.role === 'ADMIN') {
+          window.location = '/admin-dashboard';
+        }
+
+        if (response.data.role === 'SELLER') {
+          window.location = '/seller-dashboard';
+        }
+
+        if (response.data.role === 'BUYER') {
+          window.location = '/buyer-dashboard';
+        }
       })["catch"](function (error) {
         console.log('Error:', error); // You might want to display an error message to the user
       });
