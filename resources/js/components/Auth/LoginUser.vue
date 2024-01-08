@@ -37,12 +37,12 @@
             submit() {
                 axios.post('/login', this.credentials)
                     .then(response => {
-                        window.location = '/';
+                        window.location = '/login';
                         
                     })
                     .catch(error => {
                         console.log('Error:', error);
-                    // You might want to display an error message to the user
+                        // You might want to display an error message to the user
                     });
                 }
 

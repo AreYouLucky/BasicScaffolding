@@ -2101,7 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       axios.post('/login', this.credentials).then(function (response) {
-        window.location = '/';
+        window.location = '/login';
       })["catch"](function (error) {
         console.log('Error:', error); // You might want to display an error message to the user
       });

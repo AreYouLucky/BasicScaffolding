@@ -20,6 +20,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+        //return $request;
 
         $credentials = $request->validate(
             [
@@ -37,7 +38,7 @@ class LoginController extends Controller
                 'errors' => [
                     'username' =>['Invalid Credentials']
                 ]
-                ], 422);
+            ], 422);
     }
 
     public function logout(Request $req){
