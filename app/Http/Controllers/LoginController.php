@@ -14,11 +14,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-
-    public function index(){
-        return view('home.login');
-    }
-
     public function login(Request $request){
         //return $request;
 
@@ -32,7 +27,8 @@ class LoginController extends Controller
             if(Auth::attempt($credentials)){ //ang query nia is select * from studentmodel where username = ? and pass = ?
                 $request->session()->regenerate();
 
-                return Auth::user();
+                $user = Auth::user();
+                return $user;
             }
             return response()->json([
                 'errors' => [

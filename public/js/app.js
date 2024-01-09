@@ -2100,20 +2100,18 @@ __webpack_require__.r(__webpack_exports__);
       this.showPassword = !this.showPassword;
     },
     submit: function submit() {
-      axios.post('/login', this.credentials).then(function (response) {
-        console.log(response.data.role);
+      axios.post('/custom-login', this.credentials).then(function (response) {
+        console.log(response.data.role); // if(response.data.role === 'ADMIN'){
+        //     window.location = '/admin-dashboard';
+        // }
+        // if(response.data.role === 'SELLER'){
+        //     window.location = '/seller-dashboard';
+        // }
+        // if(response.data.role === 'BUYER'){
+        //     window.location = '/buyer-dashboard';
+        // }
 
-        if (response.data.role === 'ADMIN') {
-          window.location = '/admin-dashboard';
-        }
-
-        if (response.data.role === 'SELLER') {
-          window.location = '/seller-dashboard';
-        }
-
-        if (response.data.role === 'BUYER') {
-          window.location = '/buyer-dashboard';
-        }
+        window.location = '/';
       })["catch"](function (error) {
         console.log('Error:', error); // You might want to display an error message to the user
       });

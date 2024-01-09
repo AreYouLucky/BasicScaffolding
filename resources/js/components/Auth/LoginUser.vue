@@ -34,21 +34,21 @@
                 this.showPassword = !this.showPassword;
             },
 
-            submit() {
-                axios.post('/login', this.credentials)
+            submit: function() {
+                axios.post('/custom-login', this.credentials)
                     .then(response => {
                         console.log(response.data.role);
 
-                        if(response.data.role === 'ADMIN'){
-                            window.location = '/admin-dashboard';
-                        }
-                        if(response.data.role === 'SELLER'){
-                            window.location = '/seller-dashboard';
-                        }
-                        if(response.data.role === 'BUYER'){
-                            window.location = '/buyer-dashboard';
-                        }
-                        
+                        // if(response.data.role === 'ADMIN'){
+                        //     window.location = '/admin-dashboard';
+                        // }
+                        // if(response.data.role === 'SELLER'){
+                        //     window.location = '/seller-dashboard';
+                        // }
+                        // if(response.data.role === 'BUYER'){
+                        //     window.location = '/buyer-dashboard';
+                        // }
+                        window.location = '/'
                         
                     })
                     .catch(error => {

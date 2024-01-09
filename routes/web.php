@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Session;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('login');
+})->middleware('guest');
+
+
 Auth::routes([
     'login' => true,
     'register' => false, // Registration Routes...
@@ -35,7 +40,7 @@ Auth::routes([
 // });
 
 //LOGIN
-Route::get('/',[App\Http\Controllers\LoginController::class, 'index']);
+
 Route::post('/login',[App\Http\Controllers\LoginController::class, 'login']);
 
 Route::post('/logout',[App\Http\Controllers\LoginController::class, 'logout']);
@@ -45,14 +50,14 @@ Route::get('/register',[App\Http\Controllers\RegisterController::class, 'index']
 
 //ADMIN
 
-Route::middleware(['auth', 'admin'])->group(function(){
+Route::middleware(['auth','admin'])->group(function(){
     Route::get('/admin-dashboard',[App\Http\Controllers\Admin\AdminController::class, 'index']);
 });
 
 
 
 //SELLER
-Route::middleware(['auth', 'seller'])->group(function(){
+Route::middleware(['auth','seller'])->group(function(){
     Route::get('/seller-dashboard',[App\Http\Controllers\Seller\SellerController::class, 'index']);
 });
 
